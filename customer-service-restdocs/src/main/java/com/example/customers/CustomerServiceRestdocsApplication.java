@@ -1,4 +1,4 @@
-package com.example.customerservicerestdocs;
+package com.example.customers;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

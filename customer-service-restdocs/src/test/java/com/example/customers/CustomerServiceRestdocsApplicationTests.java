@@ -1,4 +1,4 @@
-package com.example.customerservicerestdocs;
+package com.example.customers;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
