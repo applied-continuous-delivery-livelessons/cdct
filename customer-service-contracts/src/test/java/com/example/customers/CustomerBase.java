@@ -26,10 +26,17 @@ public class CustomerBase {
 
     @Before
     public void before() {
+
         Mockito.when(this.customerRepository.findAll())
                 .thenReturn(Arrays.asList(
                         new Customer(1L, "first1", "last1", "email1@email.com"),
                         new Customer(2L, "first2", "last2", "email2@email.com")));
+
+        Mockito.when(this.customerRepository.findOne(Mockito.anyLong())).thenAnswer(invocation -> {
+            Object id = invocation.getArguments()[0];
+            return new Customer(Long.class.cast(id), "first", "last", "email@email.com");
+        });
+
         RestAssuredMockMvc.standaloneSetup(this.customerRestController);
     }
 }

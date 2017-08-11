@@ -5,19 +5,16 @@ import org.springframework.http.HttpHeaders
 import org.springframework.http.MediaType
 
 Contract.make {
-    description "should return all the customers"
+    description "should return a specific customer"
     request {
-        url value(consumer(regex("/customers/[0-9]{5}")))
+        url $(regex("/customers/1"))
         method GET()
-        headers {
-            header(HttpHeaders.ACCEPT, MediaType.APPLICATION_JSON_UTF8_VALUE)
-        }
     }
     response {
         headers {
             header(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_UTF8_VALUE)
         }
         status 200
-        body([])
+        body([email: "email@email.com", first: "first", last: "last"])
     }
 }

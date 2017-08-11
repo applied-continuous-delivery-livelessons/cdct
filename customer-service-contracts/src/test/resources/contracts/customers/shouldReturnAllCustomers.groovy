@@ -9,9 +9,6 @@ Contract.make {
     request {
         url "/customers"
         method GET()
-        headers {
-            header(HttpHeaders.ACCEPT, MediaType.APPLICATION_JSON_UTF8_VALUE)
-        }
     }
     response {
         headers {

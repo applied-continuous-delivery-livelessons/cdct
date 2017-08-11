@@ -19,7 +19,7 @@ import static org.hamcrest.Matchers.contains;
  * @author <a href="josh@joshlong.com">Josh Long</a>
  */
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = CustomerClientApplication.class)
+@SpringBootTest(classes = CustomerClientApplication.class )
 @AutoConfigureStubRunner(ids = "com.example:customer-service-contracts:+:8080", workOffline = true)
 public class CustomerClientContractStubTest {
 
@@ -30,7 +30,8 @@ public class CustomerClientContractStubTest {
     public void getCustomers() throws Exception {
         Collection<Customer> customers = this.client.getCustomers();
         Assert.assertThat(customers, contains(
-                new Customer(1L, "first", "last", "email")));
+                new Customer(1L ,"first1", "last1", "email1@email.com"),
+                new Customer(2L ,"first2", "last2", "email2@email.com")));
     }
 
     @Test
