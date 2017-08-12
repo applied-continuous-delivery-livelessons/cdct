@@ -1,7 +1,6 @@
 package com.example.customers;
 
 import com.jayway.restassured.module.mockmvc.RestAssuredMockMvc;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +25,7 @@ public class CustomerBase {
     }
 
     public void triggerMessage() throws Exception {
+        System.out.println("trigger!!!");
         this.customerRestController
                 .processLongRunningReportForCustomer(1L);
     }

@@ -1,4 +1,4 @@
-package com.example.customers;
+package com.example.client;
 
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpMethod;

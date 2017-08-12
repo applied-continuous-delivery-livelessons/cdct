@@ -51,12 +51,22 @@
         </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-stream-test-support</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-contract-stub-runner</artifactId>
             <scope>test</scope>
         </dependency>
         <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-contract-wiremock</artifactId>
+            <scope>test</scope>
+        </dependency>
+       <!-- <dependency>
             <groupId>com.example</groupId>
-            <artifactId>customer-service-restdocs</artifactId>
+            <artifactId>customer-service-restdocs-messaging</artifactId>
             <classifier>stubs</classifier>
             <version>0.0.1-SNAPSHOT</version>
             <scope>test</scope>
@@ -66,7 +76,7 @@
                     <artifactId>*</artifactId>
                 </exclusion>
             </exclusions>
-        </dependency>
+        </dependency>-->
     </dependencies>
 
     <dependencyManagement>

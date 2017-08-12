@@ -1,4 +1,4 @@
-package com.example.customers;
+package com.example.client;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -15,21 +15,20 @@ import static org.hamcrest.Matchers.contains;
 /**
  * @author <a href="josh@joshlong.com">Josh Long</a>
  */
-//@Ignore
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = CustomerClientApplication.class, properties = {"customer-service.host=http://localhost:8003"})
-@AutoConfigureStubRunner(ids = "com.example:customer-service-contracts:+:8003", workOffline = true)
-public class CustomerClientContractStubTest {
+@AutoConfigureStubRunner(ids = "com.example:customer-service-restdocs:+:8002", workOffline = true)
+@SpringBootTest(classes = CustomerClientApplication.class, properties = {"customer-service.host=http://localhost:8002"})
+public class CustomerClientRestDocsStubTest {
 
     @Autowired
     private CustomerClient client;
 
     @Test
     public void getCustomers() throws Exception {
-        Collection<Customer> customers = this.client.getCustomers();
+        Collection<com.example.client.Customer> customers = this.client.getCustomers();
         Assert.assertThat(customers, contains(
-                new Customer(1L, "first1", "last1", "email1@email.com"),
-                new Customer(2L, "first2", "last2", "email2@email.com")));
+                new com.example.client.Customer(1L, "first", "last", "email@email.com"),
+                new com.example.client.Customer(2L, "first", "last", "email@email.com")));
     }
 
     @Test
