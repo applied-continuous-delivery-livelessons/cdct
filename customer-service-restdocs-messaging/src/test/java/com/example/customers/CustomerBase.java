@@ -12,9 +12,9 @@ import org.springframework.test.context.junit4.SpringRunner;
 /**
  * @author <a href="josh@joshlong.com">Josh Long</a>
  */
+@Slf4j
 @SpringBootTest(classes = CustomerServiceApplication.class)
 @RunWith(SpringRunner.class)
-@Slf4j
 @AutoConfigureMessageVerifier
 public class CustomerBase {
 
@@ -27,7 +27,6 @@ public class CustomerBase {
     }
 
     public void triggerMessage() throws Exception {
-        log.info("triggerMessage is being executed");
         this.customerRestController
                 .processLongRunningReportForCustomer(1L);
 
