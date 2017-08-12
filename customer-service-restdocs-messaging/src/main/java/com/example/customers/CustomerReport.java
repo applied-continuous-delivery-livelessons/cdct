@@ -1,4 +1,4 @@
-package com.example.customerclient;
+package com.example.customers;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -10,7 +10,6 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Customer {
-    private Long id;
-    private String first, last, email;
+public class CustomerReport {
+    private Long customerId;
 }

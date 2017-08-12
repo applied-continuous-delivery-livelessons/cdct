@@ -1,8 +1,5 @@
 package com.example.customers;
 
-import com.example.customerclient.Customer;
-import com.example.customerclient.CustomerClient;
-import com.example.customerclient.CustomerClientApplication;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
