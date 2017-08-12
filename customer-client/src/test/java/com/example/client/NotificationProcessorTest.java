@@ -32,7 +32,7 @@ public class NotificationProcessorTest {
     @Test
     public void notificationProcessorShouldReceiveANewCustomerReport() throws Throwable {
         this.stubTrigger.trigger("customer_report_message");
-      //  BDDAssertions.then(this.processor.reports.size()).isEqualTo(1);
+        BDDAssertions.then(this.processor.reports.size()).isEqualTo(1);
     }
 }
 

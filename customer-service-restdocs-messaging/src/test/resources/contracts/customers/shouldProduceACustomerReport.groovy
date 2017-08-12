@@ -10,6 +10,6 @@ Contract.make {
     }
     outputMessage {
         sentTo "customers"
-        body([customerId: 1L])
+        body([customerId: 1])
     }
 }

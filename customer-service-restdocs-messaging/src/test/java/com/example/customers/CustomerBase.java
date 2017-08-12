@@ -1,11 +1,11 @@
 package com.example.customers;
 
 import com.jayway.restassured.module.mockmvc.RestAssuredMockMvc;
+import lombok.extern.slf4j.Slf4j;
 import org.junit.Before;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.cloud.contract.verifier.messaging.boot.AutoConfigureMessageVerifier;
 import org.springframework.test.context.junit4.SpringRunner;
 
 /**
@@ -13,7 +13,7 @@ import org.springframework.test.context.junit4.SpringRunner;
  */
 @SpringBootTest(classes = CustomerServiceApplication.class)
 @RunWith(SpringRunner.class)
-@AutoConfigureMessageVerifier
+@Slf4j
 public class CustomerBase {
 
     @Autowired
@@ -25,9 +25,10 @@ public class CustomerBase {
     }
 
     public void triggerMessage() throws Exception {
-        System.out.println("trigger!!!");
+        log.info("triggerMessage is being executed");
         this.customerRestController
                 .processLongRunningReportForCustomer(1L);
+
     }
 }
 

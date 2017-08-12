@@ -29,9 +29,3 @@ public class NotificationProcessor {
     }
 }
 
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
-class CustomerReport {
-    private Long customerId;
-}
