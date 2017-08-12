@@ -1,0 +1,101 @@
+= Customers API Guide v1
+Applied Continuous Delivery;
+:doctype: book
+:toc:
+:sectanchors:
+:sectlinks:
+:toclevels: 4
+:source-highlighter: highlightjs
+
+[[overview]]
+= Overview
+
+[[overview-http-verbs]]
+== HTTP verbs
+
+The Customers API follows the standard HTTP REST conventions and supports the verbs listed below.
+
+|===
+| Verb | Usage
+
+| `GET`
+| Used to retrieve a resource
+
+| `POST`
+| Used to create a new resource
+
+| `PUT`
+| Used to update an existing resource
+
+| `DELETE`
+| Used to delete an existing resource
+|===
+
+[[overview-http-status-codes]]
+== HTTP status codes
+
+The Customer API uses the following HTTP status codes.
+
+|===
+| Status code | Usage
+
+| `200 OK`
+| The request completed successfully
+
+| `201 Created`
+| A resource has been updated or created successfully. The resource's URI is available from the response's
+`Location` header
+
+| `400 Bad Request`
+| The request was malformed. The response body will include an error providing further information
+
+| `404 Not Found`
+| The requested resource did not exist
+|===
+
+
+
+
+[[resources]]
+= Resources
+
+[[resources-customers]]
+== Customers
+
+The Customers resource is used to list all customers and a particular customer given an ID.
+
+[[resources-customers-list]]
+=== Listing customers
+
+A `GET` request will list all of the service's customers.
+
+
+
+.list all the customers with `curl`
+include::{snippets}/customers/curl-request.adoc[]
+
+.list all the customers with `http`
+include::{snippets}/customers/httpie-request.adoc[]
+
+.the response from the `/customers` endpoint.
+include::{snippets}/customers/http-response.adoc[]
+
+
+
+[[resources-customers-by-id]]
+== Customers By ID
+
+The `customers/{id}`  resource  returns a particular customer given  a customer ID.
+
+[[resources-customers-list]]
+=== Listing customers by a given ID
+
+
+.list all the customers with `curl`
+include::{snippets}/customerById/curl-request.adoc[]
+
+.list all the customers with `http`
+include::{snippets}/customerById/httpie-request.adoc[]
+
+.the response from the `/customers` endpoint.
+include::{snippets}/customerById/http-response.adoc[]
