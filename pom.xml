@@ -12,6 +12,7 @@
         <module>customer-service-restdocs</module>
         <module>customer-service-contracts</module>
         <module>customer-service-restdocs-messaging</module>
+        <module>customer-service-restdocs-messaging-discovery</module>
         <module>customer-client</module>
     </modules>
 
