@@ -155,8 +155,8 @@
                 <artifactId>maven-assembly-plugin</artifactId>
                 <executions>
                     <execution>
-                        <id>stub</id>
-                        <phase>prepare-package</phase>
+                        <id>stub</id> <phase>package</phase>
+                        <!--<phase>prepare-package</phase>-->
                         <goals>
                             <goal>single</goal>
                         </goals>

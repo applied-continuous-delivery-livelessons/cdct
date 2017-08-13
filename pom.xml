@@ -9,6 +9,7 @@
     <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
     <modules>
+        <module>eureka-service</module>
         <module>customer-service-restdocs</module>
         <module>customer-service-contracts</module>
         <module>customer-service-restdocs-messaging</module>

@@ -25,11 +25,16 @@
         </project.reporting.outputEncoding>
         <java.version>1.8</java.version>
         <spring-cloud.version>Dalston.SR2</spring-cloud.version>
-        <snippetsDirectory>${project.build.directory}/snippets</snippetsDirectory>
+        <snippetsDirectory>${project.build.directory}/snippets
+        </snippetsDirectory>
         <spring.cloud.contract.jar.skip>true</spring.cloud.contract.jar.skip>
     </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-eureka</artifactId>
+        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
@@ -142,13 +147,18 @@
                     </execution>
                 </executions>
             </plugin>
+
+            <!---->
+            <!-- we want the assembly plugin to generate the JAR -->
+
+            <!---->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-assembly-plugin</artifactId>
                 <executions>
                     <execution>
                         <id>stub</id>
-                        <phase>prepare-package</phase>
+                        <phase>package</phase>
                         <goals>
                             <goal>single</goal>
                         </goals>
