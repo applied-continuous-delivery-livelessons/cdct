@@ -6,6 +6,7 @@ Applied Continuous Delivery;
 :sectlinks:
 :toclevels: 4
 :source-highlighter: highlightjs
+:snippets: ../../../target/snippets
 
 [[overview]]
 = Overview
